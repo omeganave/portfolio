@@ -1,13 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Monomaniac One', sans-serif;
+  color: #FFF;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+ header {
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 5vh;
+  width: 100vw;
+  padding: 37px 0px 37px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #FFF;
+  background: #1D1D1D;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+ }
+
+ nav {
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 4vh;
+  width: 100vw;
+  background: #1D1D1D;
+  padding: 6px 0 6px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  outline: 2px solid #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+ }
+
+ nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+ }
+
+ nav li {
+  padding: 0 65px;
+ }
+
+footer {
+  display: flex;
+  bottom: 0;
+  left: 0;
+  height: 3vh;
+  width: 100vw;
+  background: #1D1D1D;
+  position: relative;
+  padding: 8px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-shrink: 0;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* align-items: center; */
+}
+
+.contentContainer {
+  display: flex;
+  flex: 1;
+  background-color: black;
+  align-items: center;
+  outline: 1px solid #FFF;
+  height: 100%;
+  justify-content: center;
+}
+
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.contentItem {
+  flex: 0 0 calc(33.33% - 10px); /* Adjust the width of each item with margins */
+  margin: 5px; /* Space between items */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.1s, scale 0.1s, box-shadow 0.1s;
+  box-shadow: none;
+}
+
+.contentItem:not(:hover) {
+  box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.2); 
+}
+
+.contentItem:hover {
+  z-index: 2;
+  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4);
+}
+
+.contentImage {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.contentDescWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value for transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s; /* Add opacity transition */
+  border-radius: 10px;
+}
+
+.contentItem:hover .contentDescWrapper {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.contentDesc {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.navButton {
+  text-decoration: none;
+  color: #FFF;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navButton::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: rgb(202, 202, 202);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.navButton:hover::before {
+  width: 100%;
+}
+
+.navButton:hover {
+  color: rgb(202, 202, 202);
+}
+
+.socialButton {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.socialButton:hover {
+  color: rgb(202, 202, 202);
+}
+
+.homeContainer {
+  display: flex;
+  height: 100%;
+}
+
+.homeLeft {
+  display: flex;
+  flex: 2;
+  padding: 20px;
+  align-items: center;
+  font-size: larger;
+}
+
+.homeRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+}
+.homeRight p {
+  font-size: medium;
+  color: #868686;
+  text-align: center;
+}
+
+.homeImgContainer {
+  width: 80%;
+  height: auto;
+}
+
+.homeImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contactDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactDiv p {
+  text-align: center;
+  font-size: x-large;
 }
